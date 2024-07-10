@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/stilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/static/imagenes/airplane_14718.ico">
+    <script src="/static/js/sript.js"></script>
+    <a href="index.html">
+    <div class="medio4contacto"><h2><i class="fas fa-plane"></i>TurismoViaje</h2></div>
+    
+    <title>Lista de Empleados</title>
+</head>
+<body>
+    <h1>Lista de Empleados</h1>
+    <ul>
+        {% for empleado in empleados %}
+            <li>
+                {{ empleado.nombre }} - {{ empleado.correo }}
+                <a href="{{ url_for('edit', id=empleado.id) }}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

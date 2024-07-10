@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/stilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="/static/imagenes/airplane_14718.ico">
+    <script src="/static/js/sript.js"></script>
+    <a href="index.html">
+    <div class="medio4contacto"><h2><i class="fas fa-plane"></i>TurismoViaje</h2></div>
+    <meta charset="UTF-8">
+    <title>Lista de Consultas</title>
+</head>
+<body>
+    <h1>Lista de Consultas</h1>
+    <table border="1">
+        <ul>
+            {% for empleado in empleados %}
+                <li>
+                    {{ empleado[0] }} - {{ empleado[1] }} - {{ empleado[2] }} - {{ empleado[3] }} - {{ empleado[4] }}
+                </li>
+            {% endfor %}
+        </ul>
+    </table>
+    <ul>
+        {% for consulta in consultas %}
+            <li>
+                {{ consulta[0] }} - {{ consulta[1] }} - {{ consulta[2] }} - {{ consulta[3] }} - {{ consulta[4] }}
+                <a href="{{ url_for('edit', id=consulta[0]) }}">Editar</a>
+                <a href="{{ url_for('delete', id=consulta[0]) }}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
